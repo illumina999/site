@@ -130,10 +130,11 @@
   function dateHeure(iso) { return iso ? new Date(iso).toLocaleString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''; }
   function dateFr(iso) { return iso ? new Date(iso + 'T00:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : ''; }
 
-  var COLS = 'id,code,nom,telephone,pays_code,pays,date_naissance,profession,email,motivation,parrain,statut,reference_paiement,matricule,date_demande,date_adhesion';
+  var COLS = 'id,code,nom,telephone,pays_code,pays,date_naissance,profession,email,motivation,parrain,statut,reference_paiement,matricule,date_demande,date_adhesion,statut_carte,reference_carte,date_carte';
   var ONGLETS = [
     { id: 'attente', label: 'En attente', f: function (d) { return d.statut === 'en_attente'; } },
     { id: 'payer', label: 'À payer', f: function (d) { return d.statut === 'validee' || d.statut === 'paiement_declare'; } },
+    { id: 'cartes', label: 'Cartes', f: function (d) { return d.statut === 'membre' && d.statut_carte !== 'active'; } },
     { id: 'membres', label: 'Membres', f: function (d) { return d.statut === 'membre'; } },
     { id: 'refusees', label: 'Refusées', f: function (d) { return d.statut === 'refusee'; } }
   ];
@@ -198,6 +199,13 @@
       d.statut = 'membre'; d.matricule = r.data; charger();
     });
   }
+  function confirmerCarte(d) {
+    $('#msg-tableau').textContent = '';
+    sb.rpc('admin_confirmer_carte', { p_id: d.id }).then(function (r) {
+      if (r.error || !r.data) { $('#msg-tableau').textContent = 'Le paiement de la carte n\'a pas pu être confirmé. Actualisez puis réessayez.'; return; }
+      d.statut_carte = 'active'; charger();
+    });
+  }
   function chargerPhoto(d) {
     if (etat.photos[d.id]) return;
     sb.from('demandes').select('photo').eq('id', d.id).single().then(function (r) {
@@ -220,7 +228,11 @@
   function pastille(d) {
     if (d.statut === 'paiement_declare') return h('span', { class: 'pastille alerte' }, 'Référence reçue');
     if (d.statut === 'validee') return h('span', { class: 'pastille' }, 'Attend le paiement');
-    if (d.statut === 'membre') return h('span', { class: 'pastille vert' }, 'Membre');
+    if (d.statut === 'membre') {
+      if (d.statut_carte === 'declaree') return h('span', { class: 'pastille alerte' }, 'Carte : référence reçue');
+      if (d.statut_carte === 'active') return h('span', { class: 'pastille vert' }, 'Membre · carte active');
+      return h('span', { class: 'pastille vert' }, 'Membre');
+    }
     if (d.statut === 'refusee') return h('span', { class: 'pastille' }, 'Refusée');
     return h('span', { class: 'pastille alerte' }, 'À examiner');
   }
@@ -232,6 +244,8 @@
     } else if (d.statut === 'validee' || d.statut === 'paiement_declare') {
       a.append(boutonDeuxTemps('Paiement reçu', 'Confirmer le paiement ?', 'btn-vert', function () { confirmerPaiement(d); }),
                h('button', { type: 'button', class: 'btn btn-contour btn-petit', onclick: function () { changerStatut(d, 'en_attente'); } }, 'Remettre en attente'));
+    } else if (d.statut === 'membre' && d.statut_carte !== 'active') {
+      a.append(boutonDeuxTemps('Paiement carte reçu', 'Confirmer le paiement de la carte ?', 'btn-vert', function () { confirmerCarte(d); }));
     } else if (d.statut === 'refusee') {
       a.append(h('button', { type: 'button', class: 'btn btn-contour btn-petit', onclick: function () { changerStatut(d, 'en_attente'); } }, 'Remettre en attente'));
     }
@@ -255,7 +269,7 @@
           ligne('Pays', d.pays), ligne('Téléphone', d.telephone), ligne('E-mail', d.email),
           ligne('Date de naissance', dateFr(d.date_naissance)), ligne('Profession', d.profession),
           ligne('Parrain', d.parrain), ligne('Motivation', d.motivation),
-          ligne('Référence de paiement', d.reference_paiement), ligne('Date d\'adhésion', dateFr(d.date_adhesion))),
+          ligne('Référence de paiement', d.reference_paiement), ligne('Référence paiement carte', d.reference_carte), ligne('Date d\'adhésion', dateFr(d.date_adhesion))),
         actions(d)));
     }
     return c;
@@ -274,7 +288,7 @@
       if (!q) return true;
       return [d.nom, d.telephone, d.code, d.matricule, d.pays].join(' ').toLowerCase().indexOf(q) !== -1;
     });
-    var aVerifier = etat.onglet === 'payer' ? lignes.filter(function (d) { return d.statut === 'paiement_declare'; }).length : 0;
+    var aVerifier = etat.onglet === 'payer' ? lignes.filter(function (d) { return d.statut === 'paiement_declare'; }).length : (etat.onglet === 'cartes' ? lignes.filter(function (d) { return d.statut_carte === 'declaree'; }).length : 0);
     $('#resume').textContent = lignes.length + ' demande' + (lignes.length > 1 ? 's' : '') + (aVerifier ? ' · ' + aVerifier + ' avec une référence de paiement à vérifier' : '');
     var liste = $('#liste'); liste.textContent = '';
     if (!lignes.length) {
