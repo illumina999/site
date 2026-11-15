@@ -22,3 +22,6 @@ window.CONFIG = {
     "envers le respect, la solidarité et le dévouement qui nous unissent. " +
     "Que ton chemin parmi nous soit riche de fraternité."
 };
+window.CONFIG.MONTANT_CARTE_DEFAUT = "80 €";
+window.CONFIG.MONTANTS_CARTE = {CI:"17 500 F CFA",BJ:"17 500 F CFA",BF:"17 500 F CFA",ML:"17 500 F CFA",NE:"17 500 F CFA",SN:"17 500 F CFA",TG:"17 500 F CFA",GW:"17 500 F CFA",CM:"17 500 F CFA",CF:"17 500 F CFA",TD:"17 500 F CFA",CG:"17 500 F CFA",GQ:"17 500 F CFA",GA:"17 500 F CFA"};
+window.CONFIG.SIGNATURE_IMAGE = "signature.png";
