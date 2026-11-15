@@ -111,12 +111,58 @@
   .signature img { max-height: 60px; width: auto; }
   .actions-fiche { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
 
+
+  /* Carte de membre (format carte bancaire 520 x 328) */
+  .cartes-titre { margin: 40px 0 6px; font-size: 1.35rem; }
+  .cartes { display: grid; gap: 18px; margin-top: 8px; }
+  .carte-membre { width: 520px; height: 328px; flex: none; transform-origin: top center; position: relative; overflow: hidden; border-radius: 18px; font-family: var(--font-texte); -webkit-print-color-adjust: exact; print-color-adjust: exact; box-shadow: 0 6px 22px rgba(10,16,32,0.22); }
+  .cm-recto { background: linear-gradient(135deg, #F7FBFF 0%, #E3F0F8 100%); color: #0A1020; border: 1.5px solid #0B3D91; padding: 20px 24px; }
+  .cm-fond { position: absolute; left: -20px; top: -6px; width: 340px; height: 340px; object-fit: contain; opacity: 0.2; mix-blend-mode: multiply; filter: grayscale(1) sepia(1) hue-rotate(150deg) saturate(2.2) brightness(1.15); pointer-events: none; }
+  .cm-motif { position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20520%20328%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolyline%20points%3D%220%2C18.0%208%2C19.9%2016%2C21.7%2024%2C23.3%2032%2C24.7%2040%2C25.8%2048%2C26.6%2056%2C27.0%2064%2C26.9%2072%2C26.5%2080%2C25.7%2088%2C24.6%2096%2C23.2%20104%2C21.5%20112%2C19.7%20120%2C17.9%20128%2C16.0%20136%2C14.2%20144%2C12.6%20152%2C11.2%20160%2C10.1%20168%2C9.4%20176%2C9.0%20184%2C9.1%20192%2C9.5%20200%2C10.3%20208%2C11.5%20216%2C12.9%20224%2C14.6%20232%2C16.4%20240%2C18.3%20248%2C20.2%20256%2C21.9%20264%2C23.5%20272%2C24.9%20280%2C26.0%20288%2C26.7%20296%2C27.0%20304%2C26.9%20312%2C26.4%20320%2C25.6%20328%2C24.4%20336%2C23.0%20344%2C21.3%20352%2C19.4%20360%2C17.6%20368%2C15.7%20376%2C13.9%20384%2C12.3%20392%2C11.0%20400%2C10.0%20408%2C9.3%20416%2C9.0%20424%2C9.1%20432%2C9.6%20440%2C10.5%20448%2C11.7%20456%2C13.2%20464%2C14.9%20472%2C16.7%20480%2C18.6%20488%2C20.5%20496%2C22.2%20504%2C23.8%20512%2C25.1%20520%2C26.1%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C24.3%208%2C26.0%2016%2C27.5%2024%2C28.7%2032%2C29.6%2040%2C30.1%2048%2C30.2%2056%2C29.9%2064%2C29.3%2072%2C28.2%2080%2C26.9%2088%2C25.3%2096%2C23.6%20104%2C21.7%20112%2C19.8%20120%2C18.0%20128%2C16.3%20136%2C14.8%20144%2C13.6%20152%2C12.8%20160%2C12.3%20168%2C12.2%20176%2C12.5%20184%2C13.2%20192%2C14.3%20200%2C15.6%20208%2C17.2%20216%2C19.0%20224%2C20.9%20232%2C22.7%20240%2C24.6%20248%2C26.2%20256%2C27.7%20264%2C28.8%20272%2C29.7%20280%2C30.1%20288%2C30.2%20296%2C29.8%20304%2C29.1%20312%2C28.0%20320%2C26.7%20328%2C25.1%20336%2C23.3%20344%2C21.4%20352%2C19.5%20360%2C17.7%20368%2C16.0%20376%2C14.6%20384%2C13.5%20392%2C12.7%20400%2C12.3%20408%2C12.2%20416%2C12.6%20424%2C13.4%20432%2C14.5%20440%2C15.8%20448%2C17.5%20456%2C19.3%20464%2C21.1%20472%2C23.0%20480%2C24.8%20488%2C26.5%20496%2C27.9%20504%2C29.0%20512%2C29.8%20520%2C30.2%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C30.2%208%2C31.5%2016%2C32.5%2024%2C33.1%2032%2C33.4%2040%2C33.3%2048%2C32.7%2056%2C31.8%2064%2C30.6%2072%2C29.1%2080%2C27.4%2088%2C25.5%2096%2C23.6%20104%2C21.8%20112%2C20.0%20120%2C18.5%20128%2C17.2%20136%2C16.2%20144%2C15.6%20152%2C15.4%20160%2C15.6%20168%2C16.1%20176%2C17.1%20184%2C18.3%20192%2C19.8%20200%2C21.6%20208%2C23.4%20216%2C25.3%20224%2C27.2%20232%2C28.9%20240%2C30.4%20248%2C31.7%20256%2C32.6%20264%2C33.2%20272%2C33.4%20280%2C33.2%20288%2C32.6%20296%2C31.6%20304%2C30.4%20312%2C28.8%20320%2C27.1%20328%2C25.2%20336%2C23.3%20344%2C21.5%20352%2C19.8%20360%2C18.3%20368%2C17.0%20376%2C16.1%20384%2C15.6%20392%2C15.4%20400%2C15.6%20408%2C16.3%20416%2C17.2%20424%2C18.5%20432%2C20.1%20440%2C21.8%20448%2C23.7%20456%2C25.6%20464%2C27.4%20472%2C29.1%20480%2C30.6%20488%2C31.9%20496%2C32.7%20504%2C33.3%20512%2C33.4%20520%2C33.1%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C35.4%208%2C36.2%2016%2C36.6%2024%2C36.5%2032%2C36.1%2040%2C35.4%2048%2C34.2%2056%2C32.8%2064%2C31.2%2072%2C29.4%2080%2C27.5%2088%2C25.6%2096%2C23.8%20104%2C22.2%20112%2C20.8%20120%2C19.7%20128%2C19.0%20136%2C18.6%20144%2C18.7%20152%2C19.1%20160%2C19.9%20168%2C21.1%20176%2C22.5%20184%2C24.2%20192%2C26.0%20200%2C27.9%20208%2C29.7%20216%2C31.5%20224%2C33.1%20232%2C34.5%20240%2C35.5%20248%2C36.3%20256%2C36.6%20264%2C36.5%20272%2C36.0%20280%2C35.2%20288%2C34.0%20296%2C32.6%20304%2C30.9%20312%2C29.1%20320%2C27.2%20328%2C25.3%20336%2C23.5%20344%2C22.0%20352%2C20.6%20360%2C19.6%20368%2C18.9%20376%2C18.6%20384%2C18.7%20392%2C19.2%20400%2C20.1%20408%2C21.3%20416%2C22.8%20424%2C24.4%20432%2C26.3%20440%2C28.2%20448%2C30.0%20456%2C31.8%20464%2C33.4%20472%2C34.7%20480%2C35.7%20488%2C36.3%20496%2C36.6%20504%2C36.5%20512%2C35.9%20520%2C35.0%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C39.7%208%2C39.8%2016%2C39.5%2024%2C38.9%2032%2C37.8%2040%2C36.5%2048%2C34.9%2056%2C33.2%2064%2C31.3%2072%2C29.4%2080%2C27.6%2088%2C25.9%2096%2C24.4%20104%2C23.2%20112%2C22.4%20120%2C21.9%20128%2C21.8%20136%2C22.1%20144%2C22.8%20152%2C23.8%20160%2C25.2%20168%2C26.8%20176%2C28.6%20184%2C30.4%20192%2C32.3%20200%2C34.1%20208%2C35.8%20216%2C37.3%20224%2C38.4%20232%2C39.3%20240%2C39.7%20248%2C39.8%20256%2C39.4%20264%2C38.7%20272%2C37.7%20280%2C36.3%20288%2C34.7%20296%2C32.9%20304%2C31.0%20312%2C29.1%20320%2C27.3%20328%2C25.7%20336%2C24.2%20344%2C23.1%20352%2C22.3%20360%2C21.9%20368%2C21.8%20376%2C22.2%20384%2C22.9%20392%2C24.0%20400%2C25.4%20408%2C27.1%20416%2C28.8%20424%2C30.7%20432%2C32.6%20440%2C34.4%20448%2C36.1%20456%2C37.5%20464%2C38.6%20472%2C39.4%20480%2C39.7%20488%2C39.8%20496%2C39.4%20504%2C38.6%20512%2C37.5%20520%2C36.1%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C42.9%208%2C42.3%2016%2C41.4%2024%2C40.2%2032%2C38.7%2040%2C37.0%2048%2C35.2%2056%2C33.3%2064%2C31.4%2072%2C29.7%2080%2C28.1%2088%2C26.8%2096%2C25.8%20104%2C25.2%20112%2C25.0%20120%2C25.2%20128%2C25.7%20136%2C26.7%20144%2C27.9%20152%2C29.4%20160%2C31.1%20168%2C33.0%20176%2C34.9%20184%2C36.7%20192%2C38.5%20200%2C40.0%20208%2C41.3%20216%2C42.2%20224%2C42.8%20232%2C43.0%20240%2C42.8%20248%2C42.2%20256%2C41.3%20264%2C40.0%20272%2C38.4%20280%2C36.7%20288%2C34.9%20296%2C33.0%20304%2C31.1%20312%2C29.4%20320%2C27.9%20328%2C26.6%20336%2C25.7%20344%2C25.2%20352%2C25.0%20360%2C25.2%20368%2C25.9%20376%2C26.8%20384%2C28.1%20392%2C29.7%20400%2C31.4%20408%2C33.3%20416%2C35.2%20424%2C37.0%20432%2C38.7%20440%2C40.2%20448%2C41.4%20456%2C42.3%20464%2C42.9%20472%2C43.0%20480%2C42.7%20488%2C42.1%20496%2C41.1%20504%2C39.8%20512%2C38.2%20520%2C36.4%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C45.0%208%2C43.8%2016%2C42.4%2024%2C40.8%2032%2C39.0%2040%2C37.1%2048%2C35.2%2056%2C33.4%2064%2C31.8%2072%2C30.4%2080%2C29.3%2088%2C28.6%2096%2C28.2%20104%2C28.3%20112%2C28.7%20120%2C29.5%20128%2C30.7%20136%2C32.1%20144%2C33.7%20152%2C35.6%20160%2C37.4%20168%2C39.3%20176%2C41.1%20184%2C42.7%20192%2C44.1%20200%2C45.1%20208%2C45.8%20216%2C46.2%20224%2C46.1%20232%2C45.7%20240%2C44.8%20248%2C43.6%20256%2C42.2%20264%2C40.5%20272%2C38.7%20280%2C36.8%20288%2C34.9%20296%2C33.2%20304%2C31.6%20312%2C30.2%20320%2C29.2%20328%2C28.5%20336%2C28.2%20344%2C28.3%20352%2C28.8%20360%2C29.7%20368%2C30.9%20376%2C32.3%20384%2C34.0%20392%2C35.8%20400%2C37.7%20408%2C39.6%20416%2C41.4%20424%2C42.9%20432%2C44.3%20440%2C45.3%20448%2C45.9%20456%2C46.2%20464%2C46.1%20472%2C45.5%20480%2C44.7%20488%2C43.4%20496%2C41.9%20504%2C40.2%20512%2C38.4%20520%2C36.5%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C46.1%208%2C44.6%2016%2C42.8%2024%2C40.9%2032%2C39.1%2040%2C37.2%2048%2C35.5%2056%2C34.1%2064%2C32.9%2072%2C32.0%2080%2C31.5%2088%2C31.4%2096%2C31.7%20104%2C32.4%20112%2C33.4%20120%2C34.8%20128%2C36.4%20136%2C38.1%20144%2C40.0%20152%2C41.9%20160%2C43.7%20168%2C45.4%20176%2C46.8%20184%2C48.0%20192%2C48.9%20200%2C49.3%20208%2C49.4%20216%2C49.0%20224%2C48.3%20232%2C47.3%20240%2C45.9%20248%2C44.3%20256%2C42.5%20264%2C40.6%20272%2C38.8%20280%2C36.9%20288%2C35.3%20296%2C33.9%20304%2C32.7%20312%2C31.9%20320%2C31.5%20328%2C31.4%20336%2C31.8%20344%2C32.5%20352%2C33.6%20360%2C35.0%20368%2C36.6%20376%2C38.4%20384%2C40.3%20392%2C42.2%20400%2C44.0%20408%2C45.6%20416%2C47.0%20424%2C48.2%20432%2C48.9%20440%2C49.3%20448%2C49.4%20456%2C49.0%20464%2C48.2%20472%2C47.1%20480%2C45.7%20488%2C44.0%20496%2C42.2%20504%2C40.4%20512%2C38.5%20520%2C36.7%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C46.6%208%2C44.8%2016%2C42.9%2024%2C41.0%2032%2C39.3%2040%2C37.7%2048%2C36.4%2056%2C35.5%2064%2C34.8%2072%2C34.6%2080%2C34.8%2088%2C35.3%2096%2C36.2%20104%2C37.5%20112%2C39.0%20120%2C40.7%20128%2C42.6%20136%2C44.5%20144%2C46.3%20152%2C48.0%20160%2C49.6%20168%2C50.9%20176%2C51.8%20184%2C52.4%20192%2C52.6%20200%2C52.4%20208%2C51.8%20216%2C50.9%20224%2C49.6%20232%2C48.1%20240%2C46.3%20248%2C44.5%20256%2C42.6%20264%2C40.7%20272%2C39.0%20280%2C37.5%20288%2C36.3%20296%2C35.3%20304%2C34.8%20312%2C34.6%20320%2C34.8%20328%2C35.4%20336%2C36.4%20344%2C37.7%20352%2C39.3%20360%2C41.0%20368%2C42.9%20376%2C44.8%20384%2C46.6%20392%2C48.3%20400%2C49.8%20408%2C51.0%20416%2C51.9%20424%2C52.5%20432%2C52.6%20440%2C52.3%20448%2C51.7%20456%2C50.7%20464%2C49.4%20472%2C47.8%20480%2C46.1%20488%2C44.2%20496%2C42.3%20504%2C40.5%20512%2C38.8%20520%2C37.3%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C305.6%208%2C306.4%2016%2C306.9%2024%2C307.0%2032%2C306.7%2040%2C306.0%2048%2C304.9%2056%2C303.6%2064%2C302.0%2072%2C300.2%2080%2C298.3%2088%2C296.4%2096%2C294.6%20104%2C293.0%20112%2C291.5%20120%2C290.3%20128%2C289.5%20136%2C289.1%20144%2C289.0%20152%2C289.4%20160%2C290.1%20168%2C291.2%20176%2C292.5%20184%2C294.2%20192%2C295.9%20200%2C297.8%20208%2C299.7%20216%2C301.5%20224%2C303.2%20232%2C304.6%20240%2C305.7%20248%2C306.5%20256%2C306.9%20264%2C307.0%20272%2C306.6%20280%2C305.8%20288%2C304.7%20296%2C303.3%20304%2C301.7%20312%2C299.9%20320%2C298.0%20328%2C296.2%20336%2C294.4%20344%2C292.7%20352%2C291.3%20360%2C290.2%20368%2C289.4%20376%2C289.0%20384%2C289.1%20392%2C289.5%20400%2C290.2%20408%2C291.4%20416%2C292.8%20424%2C294.4%20432%2C296.2%20440%2C298.1%20448%2C300.0%20456%2C301.8%20464%2C303.4%20472%2C304.8%20480%2C305.9%20488%2C306.6%20496%2C307.0%20504%2C306.9%20512%2C306.5%20520%2C305.7%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C310.0%208%2C310.2%2016%2C310.0%2024%2C309.5%2032%2C308.5%2040%2C307.3%2048%2C305.7%2056%2C304.0%2064%2C302.2%2072%2C300.3%2080%2C298.4%2088%2C296.7%2096%2C295.2%20104%2C293.9%20112%2C293.0%20120%2C292.4%20128%2C292.2%20136%2C292.4%20144%2C293.0%20152%2C294.0%20160%2C295.2%20168%2C296.8%20176%2C298.5%20184%2C300.4%20192%2C302.3%20200%2C304.1%20208%2C305.8%20216%2C307.3%20224%2C308.6%20232%2C309.5%20240%2C310.0%20248%2C310.2%20256%2C310.0%20264%2C309.3%20272%2C308.3%20280%2C307.0%20288%2C305.5%20296%2C303.7%20304%2C301.9%20312%2C300.0%20320%2C298.1%20328%2C296.4%20336%2C295.0%20344%2C293.7%20352%2C292.9%20360%2C292.3%20368%2C292.2%20376%2C292.5%20384%2C293.1%20392%2C294.1%20400%2C295.5%20408%2C297.0%20416%2C298.8%20424%2C300.7%20432%2C302.6%20440%2C304.4%20448%2C306.1%20456%2C307.6%20464%2C308.7%20472%2C309.6%20480%2C310.1%20488%2C310.2%20496%2C309.9%20504%2C309.2%20512%2C308.2%20520%2C306.8%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C313.3%208%2C312.9%2016%2C312.1%2024%2C310.9%2032%2C309.5%2040%2C307.8%2048%2C306.0%2056%2C304.1%2064%2C302.2%2072%2C300.5%2080%2C298.9%2088%2C297.5%2096%2C296.4%20104%2C295.7%20112%2C295.4%20120%2C295.5%20128%2C296.0%20136%2C296.8%20144%2C298.0%20152%2C299.4%20160%2C301.1%20168%2C302.9%20176%2C304.8%20184%2C306.7%20192%2C308.5%20200%2C310.1%20208%2C311.4%20216%2C312.4%20224%2C313.1%20232%2C313.4%20240%2C313.3%20248%2C312.8%20256%2C311.9%20264%2C310.7%20272%2C309.2%20280%2C307.5%20288%2C305.7%20296%2C303.8%20304%2C302.0%20312%2C300.2%20320%2C298.6%20328%2C297.3%20336%2C296.3%20344%2C295.7%20352%2C295.4%20360%2C295.5%20368%2C296.1%20376%2C297.0%20384%2C298.2%20392%2C299.7%20400%2C301.4%20408%2C303.2%20416%2C305.1%20424%2C307.0%20432%2C308.7%20440%2C310.3%20448%2C311.6%20456%2C312.6%20464%2C313.2%20472%2C313.4%20480%2C313.2%20488%2C312.7%20496%2C311.7%20504%2C310.5%20512%2C309.0%20520%2C307.3%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C315.6%208%2C314.5%2016%2C313.2%2024%2C311.6%2032%2C309.8%2040%2C308.0%2048%2C306.1%2056%2C304.2%2064%2C302.6%2072%2C301.1%2080%2C300.0%2088%2C299.1%2096%2C298.7%20104%2C298.6%20112%2C299.0%20120%2C299.7%20128%2C300.8%20136%2C302.1%20144%2C303.7%20152%2C305.5%20160%2C307.4%20168%2C309.3%20176%2C311.1%20184%2C312.7%20192%2C314.2%20200%2C315.3%20208%2C316.1%20216%2C316.5%20224%2C316.6%20232%2C316.2%20240%2C315.4%20248%2C314.4%20256%2C313.0%20264%2C311.3%20272%2C309.5%20280%2C307.7%20288%2C305.8%20296%2C304.0%20304%2C302.3%20312%2C300.9%20320%2C299.8%20328%2C299.0%20336%2C298.6%20344%2C298.7%20352%2C299.1%20360%2C299.8%20368%2C300.9%20376%2C302.4%20384%2C304.0%20392%2C305.8%20400%2C307.7%20408%2C309.6%20416%2C311.4%20424%2C313.0%20432%2C314.4%20440%2C315.5%20448%2C316.2%20456%2C316.6%20464%2C316.5%20472%2C316.1%20480%2C315.3%20488%2C314.2%20496%2C312.7%20504%2C311.1%20512%2C309.2%20520%2C307.4%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C316.9%208%2C315.4%2016%2C313.6%2024%2C311.8%2032%2C309.9%2040%2C308.0%2048%2C306.3%2056%2C304.8%2064%2C303.5%2072%2C302.6%2080%2C302.0%2088%2C301.8%2096%2C302.0%20104%2C302.6%20112%2C303.6%20120%2C304.8%20128%2C306.4%20136%2C308.1%20144%2C310.0%20152%2C311.8%20160%2C313.7%20168%2C315.4%20176%2C316.9%20184%2C318.2%20192%2C319.1%20200%2C319.6%20208%2C319.8%20216%2C319.6%20224%2C318.9%20232%2C318.0%20240%2C316.7%20248%2C315.1%20256%2C313.4%20264%2C311.5%20272%2C309.6%20280%2C307.8%20288%2C306.1%20296%2C304.6%20304%2C303.3%20312%2C302.5%20320%2C301.9%20328%2C301.8%20336%2C302.1%20344%2C302.7%20352%2C303.7%20360%2C305.1%20368%2C306.6%20376%2C308.4%20384%2C310.3%20392%2C312.1%20400%2C314.0%20408%2C315.7%20416%2C317.1%20424%2C318.3%20432%2C319.2%20440%2C319.7%20448%2C319.8%20456%2C319.5%20464%2C318.8%20472%2C317.8%20480%2C316.4%20488%2C314.8%20496%2C313.1%20504%2C311.2%20512%2C309.3%20520%2C307.5%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C317.4%208%2C315.6%2016%2C313.7%2024%2C311.9%2032%2C310.1%2040%2C308.5%2048%2C307.1%2056%2C306.1%2064%2C305.3%2072%2C305.0%2080%2C305.1%2088%2C305.6%2096%2C306.4%20104%2C307.6%20112%2C309.0%20120%2C310.7%20128%2C312.5%20136%2C314.4%20144%2C316.3%20152%2C318.1%20160%2C319.6%20168%2C321.0%20176%2C322.0%20184%2C322.7%20192%2C323.0%20200%2C322.9%20208%2C322.4%20216%2C321.5%20224%2C320.3%20232%2C318.9%20240%2C317.2%20248%2C315.3%20256%2C313.4%20264%2C311.6%20272%2C309.8%20280%2C308.2%20288%2C306.9%20296%2C305.9%20304%2C305.3%20312%2C305.0%20320%2C305.1%20328%2C305.7%20336%2C306.6%20344%2C307.8%20352%2C309.3%20360%2C311.0%20368%2C312.8%20376%2C314.7%20384%2C316.6%20392%2C318.3%20400%2C319.9%20408%2C321.2%20416%2C322.1%20424%2C322.8%20432%2C323.0%20440%2C322.8%20448%2C322.3%20456%2C321.4%20464%2C320.1%20472%2C318.6%20480%2C316.9%20488%2C315.0%20496%2C313.1%20504%2C311.3%20512%2C309.6%20520%2C308.0%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C317.6%208%2C315.7%2016%2C313.9%2024%2C312.2%2032%2C310.7%2040%2C309.6%2048%2C308.7%2056%2C308.3%2064%2C308.2%2072%2C308.6%2080%2C309.3%2088%2C310.3%2096%2C311.7%20104%2C313.3%20112%2C315.1%20120%2C317.0%20128%2C318.9%20136%2C320.7%20144%2C322.3%20152%2C323.8%20160%2C324.9%20168%2C325.7%20176%2C326.1%20184%2C326.2%20192%2C325.8%20200%2C325.1%20208%2C324.0%20216%2C322.6%20224%2C321.0%20232%2C319.2%20240%2C317.3%20248%2C315.4%20256%2C313.6%20264%2C312.0%20272%2C310.5%20280%2C309.4%20288%2C308.6%20296%2C308.3%20304%2C308.2%20312%2C308.6%20320%2C309.4%20328%2C310.5%20336%2C311.9%20344%2C313.6%20352%2C315.4%20360%2C317.3%20368%2C319.1%20376%2C320.9%20384%2C322.6%20392%2C324.0%20400%2C325.1%20408%2C325.8%20416%2C326.2%20424%2C326.1%20432%2C325.7%20440%2C324.9%20448%2C323.8%20456%2C322.3%20464%2C320.7%20472%2C318.9%20480%2C317.0%20488%2C315.1%20496%2C313.3%20504%2C311.7%20512%2C310.3%20520%2C309.3%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C317.7%208%2C315.9%2016%2C314.4%2024%2C313.1%2032%2C312.2%2040%2C311.6%2048%2C311.4%2056%2C311.6%2064%2C312.2%2072%2C313.1%2080%2C314.4%2088%2C315.9%2096%2C317.7%20104%2C319.5%20112%2C321.4%20120%2C323.3%20128%2C325.0%20136%2C326.5%20144%2C327.8%20152%2C328.7%20160%2C329.2%20168%2C329.4%20176%2C329.2%20184%2C328.5%20192%2C327.6%20200%2C326.3%20208%2C324.7%20216%2C323.0%20224%2C321.1%20232%2C319.2%20240%2C317.4%20248%2C315.7%20256%2C314.2%20264%2C313.0%20272%2C312.1%20280%2C311.5%20288%2C311.4%20296%2C311.7%20304%2C312.3%20312%2C313.3%20320%2C314.6%20328%2C316.2%20336%2C318.0%20344%2C319.8%20352%2C321.7%20360%2C323.5%20368%2C325.2%20376%2C326.7%20384%2C327.9%20392%2C328.8%20400%2C329.3%20408%2C329.4%20416%2C329.1%20424%2C328.4%20432%2C327.4%20440%2C326.1%20448%2C324.5%20456%2C322.7%20464%2C320.8%20472%2C318.9%20480%2C317.1%20488%2C315.4%20496%2C314.0%20504%2C312.8%20512%2C312.0%20520%2C311.5%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C318.1%208%2C316.7%2016%2C315.7%2024%2C315.0%2032%2C314.6%2040%2C314.7%2048%2C315.1%2056%2C316.0%2064%2C317.2%2072%2C318.6%2080%2C320.3%2088%2C322.1%2096%2C324.0%20104%2C325.9%20112%2C327.6%20120%2C329.2%20128%2C330.6%20136%2C331.6%20144%2C332.3%20152%2C332.6%20160%2C332.5%20168%2C332.0%20176%2C331.1%20184%2C329.9%20192%2C328.5%20200%2C326.8%20208%2C325.0%20216%2C323.1%20224%2C321.2%20232%2C319.4%20240%2C317.9%20248%2C316.5%20256%2C315.5%20264%2C314.9%20272%2C314.6%20280%2C314.7%20288%2C315.3%20296%2C316.1%20304%2C317.4%20312%2C318.9%20320%2C320.6%20328%2C322.4%20336%2C324.3%20344%2C326.1%20352%2C327.9%20360%2C329.4%20368%2C330.7%20376%2C331.7%20384%2C332.4%20392%2C332.6%20400%2C332.4%20408%2C331.9%20416%2C331.0%20424%2C329.7%20432%2C328.2%20440%2C326.5%20448%2C324.7%20456%2C322.8%20464%2C320.9%20472%2C319.2%20480%2C317.6%20488%2C316.4%20496%2C315.4%20504%2C314.8%20512%2C314.6%20520%2C314.8%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.35%22/%3E%3Cpolyline%20points%3D%220%2C122.0%208%2C122.9%2016%2C123.7%2024%2C124.5%2032%2C125.3%2040%2C126.0%2048%2C126.6%2056%2C127.1%2064%2C127.5%2072%2C127.8%2080%2C128.0%2088%2C128.0%2096%2C127.9%20104%2C127.7%20112%2C127.4%20120%2C126.9%20128%2C126.4%20136%2C125.7%20144%2C125.0%20152%2C124.2%20160%2C123.4%20168%2C122.5%20176%2C121.6%20184%2C120.8%20192%2C119.9%20200%2C119.2%20208%2C118.4%20216%2C117.8%20224%2C117.2%20232%2C116.7%20240%2C116.4%20248%2C116.1%20256%2C116.0%20264%2C116.0%20272%2C116.2%20280%2C116.4%20288%2C116.8%20296%2C117.3%20304%2C117.9%20312%2C118.6%20320%2C119.3%20328%2C120.1%20336%2C121.0%20344%2C121.8%20352%2C122.7%20360%2C123.6%20368%2C124.4%20376%2C125.2%20384%2C125.9%20392%2C126.5%20400%2C127.0%20408%2C127.4%20416%2C127.7%20424%2C127.9%20432%2C128.0%20440%2C127.9%20448%2C127.7%20456%2C127.4%20464%2C127.0%20472%2C126.5%20480%2C125.9%20488%2C125.1%20496%2C124.4%20504%2C123.5%20512%2C122.7%20520%2C121.8%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3Cpolyline%20points%3D%220%2C138.9%208%2C139.6%2016%2C140.3%2024%2C140.8%2032%2C141.3%2040%2C141.6%2048%2C141.9%2056%2C142.0%2064%2C142.0%2072%2C141.8%2080%2C141.6%2088%2C141.2%2096%2C140.7%20104%2C140.1%20112%2C139.4%20120%2C138.7%20128%2C137.9%20136%2C137.0%20144%2C136.1%20152%2C135.3%20160%2C134.4%20168%2C133.6%20176%2C132.8%20184%2C132.1%20192%2C131.5%20200%2C131.0%20208%2C130.5%20216%2C130.2%20224%2C130.1%20232%2C130.0%20240%2C130.1%20248%2C130.3%20256%2C130.6%20264%2C131.0%20272%2C131.5%20280%2C132.2%20288%2C132.9%20296%2C133.7%20304%2C134.5%20312%2C135.3%20320%2C136.2%20328%2C137.1%20336%2C137.9%20344%2C138.7%20352%2C139.5%20360%2C140.1%20368%2C140.7%20376%2C141.2%20384%2C141.6%20392%2C141.8%20400%2C142.0%20408%2C142.0%20416%2C141.9%20424%2C141.6%20432%2C141.3%20440%2C140.8%20448%2C140.2%20456%2C139.6%20464%2C138.8%20472%2C138.0%20480%2C137.2%20488%2C136.3%20496%2C135.4%20504%2C134.6%20512%2C133.8%20520%2C133.0%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3Cpolyline%20points%3D%220%2C155.0%208%2C155.5%2016%2C155.8%2024%2C155.9%2032%2C156.0%2040%2C155.9%2048%2C155.7%2056%2C155.4%2064%2C155.0%2072%2C154.4%2080%2C153.8%2088%2C153.1%2096%2C152.3%20104%2C151.5%20112%2C150.6%20120%2C149.8%20128%2C148.9%20136%2C148.0%20144%2C147.2%20152%2C146.5%20160%2C145.8%20168%2C145.3%20176%2C144.8%20184%2C144.4%20192%2C144.1%20200%2C144.0%20208%2C144.0%20216%2C144.1%20224%2C144.4%20232%2C144.8%20240%2C145.2%20248%2C145.8%20256%2C146.5%20264%2C147.2%20272%2C148.0%20280%2C148.9%20288%2C149.7%20296%2C150.6%20304%2C151.5%20312%2C152.3%20320%2C153.1%20328%2C153.8%20336%2C154.4%20344%2C155.0%20352%2C155.4%20360%2C155.7%20368%2C155.9%20376%2C156.0%20384%2C156.0%20392%2C155.8%20400%2C155.5%20408%2C155.1%20416%2C154.6%20424%2C153.9%20432%2C153.2%20440%2C152.5%20448%2C151.7%20456%2C150.8%20464%2C149.9%20472%2C149.1%20480%2C148.2%20488%2C147.4%20496%2C146.6%20504%2C146.0%20512%2C145.4%20520%2C144.9%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3Cpolyline%20points%3D%220%2C170.0%208%2C170.0%2016%2C169.9%2024%2C169.6%2032%2C169.2%2040%2C168.8%2048%2C168.2%2056%2C167.5%2064%2C166.8%2072%2C166.0%2080%2C165.1%2088%2C164.2%2096%2C163.4%20104%2C162.5%20112%2C161.7%20120%2C160.9%20128%2C160.2%20136%2C159.6%20144%2C159.0%20152%2C158.6%20160%2C158.3%20168%2C158.1%20176%2C158.0%20184%2C158.1%20192%2C158.2%20200%2C158.5%20208%2C158.9%20216%2C159.5%20224%2C160.1%20232%2C160.8%20240%2C161.6%20248%2C162.4%20256%2C163.2%20264%2C164.1%20272%2C165.0%20280%2C165.8%20288%2C166.6%20296%2C167.4%20304%2C168.1%20312%2C168.7%20320%2C169.2%20328%2C169.5%20336%2C169.8%20344%2C170.0%20352%2C170.0%20360%2C169.9%20368%2C169.7%20376%2C169.3%20384%2C168.9%20392%2C168.3%20400%2C167.6%20408%2C166.9%20416%2C166.1%20424%2C165.3%20432%2C164.4%20440%2C163.5%20448%2C162.7%20456%2C161.9%20464%2C161.1%20472%2C160.3%20480%2C159.7%20488%2C159.1%20496%2C158.7%20504%2C158.3%20512%2C158.1%20520%2C158.0%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3Cpolyline%20points%3D%220%2C183.5%208%2C183.0%2016%2C182.5%2024%2C181.9%2032%2C181.2%2040%2C180.4%2048%2C179.6%2056%2C178.7%2064%2C177.9%2072%2C177.0%2080%2C176.2%2088%2C175.3%2096%2C174.6%20104%2C173.9%20112%2C173.3%20120%2C172.8%20128%2C172.4%20136%2C172.2%20144%2C172.0%20152%2C172.0%20160%2C172.1%20168%2C172.3%20176%2C172.7%20184%2C173.2%20192%2C173.7%20200%2C174.4%20208%2C175.1%20216%2C175.9%20224%2C176.7%20232%2C177.6%20240%2C178.5%20248%2C179.3%20256%2C180.2%20264%2C181.0%20272%2C181.7%20280%2C182.3%20288%2C182.9%20296%2C183.3%20304%2C183.7%20312%2C183.9%20320%2C184.0%20328%2C184.0%20336%2C183.8%20344%2C183.5%20352%2C183.1%20360%2C182.6%20368%2C182.0%20376%2C181.3%20384%2C180.6%20392%2C179.8%20400%2C178.9%20408%2C178.0%20416%2C177.2%20424%2C176.3%20432%2C175.5%20440%2C174.7%20448%2C174.0%20456%2C173.4%20464%2C172.9%20472%2C172.5%20480%2C172.2%20488%2C172.0%20496%2C172.0%20504%2C172.1%20512%2C172.3%20520%2C172.6%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3Cpolyline%20points%3D%220%2C195.6%208%2C194.9%2016%2C194.1%2024%2C193.2%2032%2C192.4%2040%2C191.5%2048%2C190.6%2056%2C189.8%2064%2C189.0%2072%2C188.3%2080%2C187.6%2088%2C187.1%2096%2C186.6%20104%2C186.3%20112%2C186.1%20120%2C186.0%20128%2C186.0%20136%2C186.2%20144%2C186.5%20152%2C186.9%20160%2C187.4%20168%2C188.0%20176%2C188.7%20184%2C189.5%20192%2C190.3%20200%2C191.1%20208%2C192.0%20216%2C192.9%20224%2C193.7%20232%2C194.5%20240%2C195.3%20248%2C196.0%20256%2C196.6%20264%2C197.1%20272%2C197.5%20280%2C197.8%20288%2C198.0%20296%2C198.0%20304%2C197.9%20312%2C197.7%20320%2C197.4%20328%2C196.9%20336%2C196.4%20344%2C195.7%20352%2C195.0%20360%2C194.2%20368%2C193.4%20376%2C192.5%20384%2C191.7%20392%2C190.8%20400%2C190.0%20408%2C189.2%20416%2C188.4%20424%2C187.8%20432%2C187.2%20440%2C186.7%20448%2C186.4%20456%2C186.1%20464%2C186.0%20472%2C186.0%20480%2C186.2%20488%2C186.4%20496%2C186.8%20504%2C187.3%20512%2C187.9%20520%2C188.6%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3Cpolyline%20points%3D%220%2C206.8%208%2C206.0%2016%2C205.1%2024%2C204.3%2032%2C203.4%2040%2C202.7%2048%2C202.0%2056%2C201.4%2064%2C200.9%2072%2C200.5%2080%2C200.2%2088%2C200.0%2096%2C200.0%20104%2C200.1%20112%2C200.3%20120%2C200.6%20128%2C201.1%20136%2C201.7%20144%2C202.3%20152%2C203.0%20160%2C203.8%20168%2C204.6%20176%2C205.5%20184%2C206.4%20192%2C207.2%20200%2C208.1%20208%2C208.9%20216%2C209.6%20224%2C210.3%20232%2C210.8%20240%2C211.3%20248%2C211.6%20256%2C211.9%20264%2C212.0%20272%2C212.0%20280%2C211.8%20288%2C211.6%20296%2C211.2%20304%2C210.7%20312%2C210.1%20320%2C209.4%20328%2C208.7%20336%2C207.9%20344%2C207.0%20352%2C206.1%20360%2C205.3%20368%2C204.4%20376%2C203.6%20384%2C202.8%20392%2C202.1%20400%2C201.5%20408%2C201.0%20416%2C200.6%20424%2C200.2%20432%2C200.1%20440%2C200.0%20448%2C200.1%20456%2C200.3%20464%2C200.6%20472%2C201.0%20480%2C201.5%20488%2C202.2%20496%2C202.9%20504%2C203.6%20512%2C204.5%20520%2C205.3%22%20fill%3D%22none%22%20stroke%3D%22%230B6FA8%22%20stroke-width%3D%220.8%22%20opacity%3D%220.1%22/%3E%3C/svg%3E") center/100% 100% no-repeat; pointer-events: none; }
+  .cm-haut { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .cm-haut > div:first-child { flex: 1; min-width: 0; }
+  .cm-nom { font-family: 'Times New Roman', Times, 'Liberation Serif', serif; font-weight: 400; letter-spacing: 0; font-size: 52px; line-height: 1; color: #0B3D91; white-space: nowrap; }
+  .cm-type { margin-top: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3F4D68; }
+  .cm-logo { width: 62px; height: 62px; object-fit: contain; flex: none; }
+  .cm-corps { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 124px; gap: 18px; margin-top: 8px; align-items: start; }
+  .cm-infos div { margin-bottom: 9px; }
+  .cm-infos small { display: block; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #3F4D68; font-weight: 700; }
+  .cm-infos b { font-size: 17px; font-weight: 800; overflow-wrap: anywhere; line-height: 1.2; }
+  .cm-infos .mat b { font-family: var(--font-mono); font-size: 19px; letter-spacing: 0.05em; }
+  .cm-photo { width: 124px; height: 156px; object-fit: cover; border: 2px solid #0A1020; background: #E8EEF9; }
+  .cm-verso { background: #FFFFFF; color: #0A1020; border: 1.5px solid #0B3D91; }
+  .cm-verso .filigrane { font-size: 64px; opacity: 0.07; }
+  .cm-bande { position: absolute; left: 0; right: 0; top: 26px; height: 42px; background: #0A1020; }
+  .cm-verso-in { position: absolute; inset: 0; padding: 90px 28px 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .cm-verso p { font-size: 13px; line-height: 1.6; text-align: center; margin: 0; }
+  .cm-sign { display: grid; grid-template-columns: 1fr 190px; gap: 20px; align-items: end; }
+  .cm-sign .m { font-family: var(--font-mono); font-size: 12px; color: #3F4D68; letter-spacing: 0.05em; }
+  .cm-sign .signature .trait { height: 46px; }
+
+  /* Visiteur de retour : on affiche directement son suivi */
+  #retour-barre { display: none; }
+  body.retour .hero, body.retour #valeurs, body.retour #parcours, body.retour #demande { display: none; }
+  body.retour nav a:not([href="#suivi"]) { display: none; }
+  body.retour #suivi { padding-top: 28px; }
+  body.retour #suivi .intro, body.retour #form-suivi { display: none; }
+  body.retour.autre-code #suivi .intro, body.retour.autre-code #form-suivi { display: block; }
+  body.retour #retour-barre { display: block; }
+  body.retour.nouvelle #demande { display: block; }
+  body.retour.nouvelle #retour-suivi { display: inline-flex !important; }
+  body.retour.nouvelle #suivi { display: none; }
+  #retour-barre p { margin: 0 0 14px; }
+  #retour-barre .liens { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+
   @page { size: A4; margin: 10mm; }
   @media print {
     body * { visibility: hidden; }
-    .fiche-wrap, .fiche-wrap * { visibility: visible; }
-    .fiche-wrap { position: absolute; left: 0; top: 0; width: 100%; height: auto !important; margin: 0; }
-    .fiche { transform: none !important; }
+    .docs, .docs * { visibility: visible; }
+    .docs { position: absolute; left: 0; top: 0; width: 100%; }
+    .fiche-wrap { height: auto !important; margin: 0; }
+    .fiche, .carte-membre { transform: none !important; }
+    .cartes-titre { break-before: page; margin-top: 0; }
+    .cartes { justify-items: center; }
+    .carte-membre { box-shadow: none; }
   }
 
   @media (max-width: 820px) {
@@ -203,6 +249,7 @@
 
   <section id="demande">
     <div class="wrap">
+      <button type="button" class="btn btn-contour btn-petit" id="retour-suivi" style="display:none;margin-bottom:14px">← Revenir à mon suivi</button>
       <h2>Faire ma demande d'adhésion</h2>
       <p class="intro">Les champs marqués d'un astérisque sont obligatoires. Vous recevrez un code de suivi à la fin.</p>
 
@@ -297,6 +344,13 @@
   <section id="suivi" class="parcours">
     <div class="wrap">
       <h2>Suivre ma demande</h2>
+      <div id="retour-barre">
+        <p>Content de vous revoir. Voici l'état de votre demande.</p>
+        <div class="liens">
+          <button type="button" class="btn btn-contour btn-petit" id="autre-code">Utiliser un autre code</button>
+          <button type="button" class="btn btn-contour btn-petit" id="voir-site">Faire une autre inscription</button>
+        </div>
+      </div>
       <p class="intro">Entrez le code reçu à la fin de votre demande et le numéro de téléphone utilisé dans le formulaire.</p>
       <form class="suivi-form" id="form-suivi" novalidate>
         <div class="champ">
@@ -476,6 +530,9 @@
   /* ---------- Suivi ---------- */
   $('#s-code').value = lire('fr-code'); $('#s-tel').value = lire('fr-tel');
   var courant = { code: '', tel: '' };
+  $('#autre-code').addEventListener('click', function () { document.body.classList.add('autre-code'); $('#s-code').focus(); });
+  $('#voir-site').addEventListener('click', function () { document.body.classList.add('nouvelle'); window.scrollTo(0, 0); });
+  $('#retour-suivi').addEventListener('click', function () { document.body.classList.remove('nouvelle'); window.scrollTo(0, 0); });
 
   $('#form-suivi').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -490,11 +547,17 @@
     if (!courant.code || courant.tel.replace(/\D/g, '').length < 8) { msg.textContent = 'Entrez votre code de suivi et votre numéro de téléphone.'; return; }
     if (!sb) { msg.textContent = 'Le site n\'est pas encore relié à Supabase. Suivez le fichier GUIDE.md.'; return; }
     sb.rpc('suivre_demande', { p_code: courant.code, p_tel: courant.tel }).then(function (r) {
-      if (r.error) { msg.textContent = 'Impossible de vérifier votre demande pour le moment. Réessayez dans un instant.'; return; }
-      if (!r.data) { msg.textContent = 'Aucune demande trouvée. Vérifiez votre code et votre numéro.'; return; }
+      if (r.error) { document.body.classList.remove('retour'); msg.textContent = 'Impossible de vérifier votre demande pour le moment. Réessayez dans un instant.'; return; }
+      if (!r.data) { document.body.classList.remove('retour'); msg.textContent = 'Aucune demande trouvée. Vérifiez votre code et votre numéro.'; return; }
       stocker('fr-code', courant.code); stocker('fr-tel', courant.tel);
       afficher(r.data);
     });
+  }
+
+  if (lire('fr-code') && lire('fr-tel') && sb) {
+    courant.code = lire('fr-code').toUpperCase(); courant.tel = lire('fr-tel');
+    document.body.classList.add('retour');
+    chargerSuivi();
   }
 
   function afficher(d) {
@@ -518,18 +581,39 @@
     }
 
     if (d.statut === 'membre') {
+      var carteActive = d.carte === 'active';
       carte.append(h('span', { class: 'pastille vert' }, 'Membre'),
         h('h3', { style: 'margin-top:12px' }, 'Votre paiement est confirmé'),
-        h('p', null, 'Voici votre fiche d\'inscription. Vous pouvez l\'imprimer ou l\'enregistrer en PDF.'));
+        h('p', null, carteActive
+          ? 'Voici votre fiche d\'inscription et votre carte de membre. Vous pouvez les imprimer ou les enregistrer en PDF.'
+          : 'Voici votre fiche d\'inscription. Vous pouvez l\'imprimer ou l\'enregistrer en PDF. Plus bas, vous pouvez obtenir votre carte de membre.'));
       zone.append(carte);
-      zone.append(construireFiche(d));
+      var docs = h('div', { class: 'docs' });
+      docs.append(construireFiche(d));
+      if (carteActive) {
+        docs.append(h('h3', { class: 'cartes-titre' }, 'Votre carte de membre'),
+          h('div', { class: 'cartes' }, construireCarte(d, 'recto'), construireCarte(d, 'verso')));
+      }
+      zone.append(docs);
       zone.append(h('div', { class: 'actions-fiche' },
         h('button', { type: 'button', class: 'btn', onclick: function () { window.print(); } }, 'Imprimer ou enregistrer en PDF')));
+      if (!carteActive) {
+        var cc = h('div', { class: 'carte', style: 'margin-top:28px' },
+          h('span', { class: 'pastille' }, 'Carte de membre'),
+          h('h3', { style: 'margin-top:12px' }, 'Obtenir ma carte de membre'),
+          h('p', null, 'Votre carte de membre est payante. Une fois le paiement confirmé, elle apparaît ici, sous votre fiche.'));
+        cc.append(blocPaiement(d, (C.MONTANTS_CARTE || {})[d.pays_code] || C.MONTANT_CARTE_DEFAUT || '80 €', 'carte'));
+        zone.append(cc);
+      }
       ajusterFiche();
     }
   }
 
-  function blocPaiement(d, montant) {
+  function blocPaiement(d, montant, mode) {
+    var isCarte = mode === 'carte';
+    var declare = isCarte ? d.carte === 'declaree' : d.statut === 'paiement_declare';
+    var refRecue = isCarte ? d.reference_carte : d.reference;
+    var objet = isCarte ? 'ma carte de membre' : 'mon adhésion';
     var bloc = h('div', { class: 'bloc' });
     if (d.pays_code === 'BJ') {
       var b = C.BENIN;
@@ -542,28 +626,28 @@
         h('ol', { class: 'liste-etapes' },
           h('li', null, 'Envoyez ' + montant + ' au numéro ci-dessus par ' + b.operateur + '.'),
           h('li', null, 'Saisissez ci-dessous la référence de la transaction reçue par SMS.'),
-          h('li', null, 'Nous vérifions votre paiement, puis votre fiche apparaît sur cette page.')));
-      if (d.statut === 'paiement_declare') {
-        bloc.append(h('p', { class: 'note', style: 'color:var(--ink)' }, 'Référence reçue : ' + (d.reference || '') + '. Votre paiement est en cours de vérification. Revenez sur cette page plus tard.'));
+          h('li', null, 'Nous vérifions votre paiement, puis ' + (isCarte ? 'votre carte apparaît sous votre fiche.' : 'votre fiche apparaît sur cette page.'))));
+      if (declare) {
+        bloc.append(h('p', { class: 'note', style: 'color:var(--ink)' }, 'Référence reçue : ' + (refRecue || '') + '. Votre paiement est en cours de vérification. Revenez sur cette page plus tard.'));
       }
-      var champ = h('input', { type: 'text', id: 'ref', maxlength: '60', autocomplete: 'off', value: d.reference || '' });
+      var champ = h('input', { type: 'text', id: 'ref', maxlength: '60', autocomplete: 'off', value: refRecue || '' });
       var err = h('span', { class: 'erreur' });
       var envoyer = h('button', { type: 'button', class: 'btn', onclick: function () {
         err.textContent = '';
         var v = champ.value.trim();
         if (v.length < 3) { err.textContent = 'Entrez la référence de la transaction'; return; }
         envoyer.textContent = 'Envoi en cours…';
-        sb.rpc('declarer_paiement', { p_code: courant.code, p_tel: courant.tel, p_ref: v }).then(function (r) {
-          envoyer.textContent = d.statut === 'paiement_declare' ? 'Modifier la référence' : 'Envoyer la référence';
+        sb.rpc(isCarte ? 'declarer_paiement_carte' : 'declarer_paiement', { p_code: courant.code, p_tel: courant.tel, p_ref: v }).then(function (r) {
+          envoyer.textContent = declare ? 'Modifier la référence' : 'Envoyer la référence';
           if (r.error || !r.data) { err.textContent = 'La référence n\'a pas pu être enregistrée. Réessayez.'; return; }
           chargerSuivi();
         });
-      } }, d.statut === 'paiement_declare' ? 'Modifier la référence' : 'Envoyer la référence');
+      } }, declare ? 'Modifier la référence' : 'Envoyer la référence');
       bloc.append(h('div', { class: 'ligne', style: 'margin-top:14px' },
         h('div', { class: 'champ' }, h('label', { for: 'ref' }, 'Référence de la transaction'), champ, err), envoyer));
     } else {
-      var message = 'Bonjour, je m\'appelle ' + d.nom + ' (' + d.pays + '). Ma demande ' + C.NOM_AUX.replace('aux','auprès des') + ' a été validée. ' +
-        'Mon code de suivi est ' + d.code + '. Je souhaite régler mon adhésion (' + montant + '). Merci de m\'indiquer comment procéder.';
+      var message = 'Bonjour, je m\'appelle ' + d.nom + ' (' + d.pays + '). ' + (isCarte ? 'Je suis membre ' + C.NOM_DES + '. ' : 'Ma demande ' + C.NOM_AUX.replace('aux','auprès des') + ' a été validée. ') +
+        'Mon code de suivi est ' + d.code + '. Je souhaite régler ' + objet + ' (' + montant + '). Merci de m\'indiquer comment procéder.';
       bloc.append(h('h4', null, 'Payer auprès du service client'),
         h('dl', { class: 'infos' }, h('dt', null, 'Montant'), h('dd', null, montant)),
         h('ol', { class: 'liste-etapes' },
@@ -607,15 +691,57 @@
           h('div', { class: 'signature' }, signature, h('div', { style: 'margin-top:5px' }, 'Signature du responsable')))));
     return h('div', { class: 'fiche-wrap' }, fiche);
   }
+  /* ---------- Carte de membre ---------- */
+  function construireCarte(d, face) {
+    var carte;
+    if (face === 'recto') {
+      var info = function (lib, val, cl) { return h('div', { class: cl || '' }, h('small', null, lib), h('b', null, val)); };
+      carte = h('div', { class: 'carte-membre cm-recto' },
+        h('div', { class: 'cm-motif', 'aria-hidden': 'true' }),
+        h('img', { class: 'cm-fond', src: 'logo.webp', alt: '' }),
+        h('div', { class: 'cm-haut' },
+          h('div', null, h('div', { class: 'cm-nom' }, C.NOM), h('div', { class: 'cm-type' }, 'Carte de membre')),
+          h('img', { class: 'cm-logo', src: 'logo.webp', alt: 'Logo' })),
+        h('div', { class: 'cm-corps' },
+          h('div', { class: 'cm-infos' },
+            info('Nom du membre', d.nom),
+            info('Pays', d.pays),
+            info('Date de naissance', dateFr(d.date_naissance)),
+            info('Matricule', d.matricule || '', 'mat')),
+          h('img', { class: 'cm-photo', src: d.photo || '', alt: 'Photo de ' + d.nom })));
+    } else {
+      var signature = h('div', { class: 'trait' });
+      if (C.SIGNATURE_IMAGE) signature.append(h('img', { src: C.SIGNATURE_IMAGE, alt: '' }));
+      carte = h('div', { class: 'carte-membre cm-verso' },
+        h('div', { class: 'cm-motif', 'aria-hidden': 'true' }),
+        h('img', { class: 'cm-fond', style: 'left:90px;top:40px;opacity:0.15', src: 'logo.webp', alt: '' }),
+        h('div', { class: 'cm-bande' }),
+        h('div', { class: 'cm-verso-in' },
+          h('p', null, 'Cette carte est strictement personnelle. Elle atteste que son titulaire est membre ' + C.NOM_DES + '.'),
+          h('div', { class: 'cm-sign' },
+            h('div', { class: 'm' }, d.matricule || ''),
+            h('div', { class: 'signature' }, signature, h('div', { style: 'margin-top:4px' }, 'Signature du responsable')))));
+    }
+    return h('div', { class: 'fiche-wrap carte-wrap', 'data-w': '520' }, carte);
+  }
   function ajusterFiche() {
-    var w = $('.fiche-wrap'); if (!w) return;
-    var f = w.firstElementChild;
-    var k = Math.min(1, w.clientWidth / 700);
-    f.style.transform = 'scale(' + k + ')';
-    w.style.height = Math.ceil(Math.max(f.offsetHeight, f.scrollHeight) * k) + 'px';
+    var ns = document.querySelectorAll('.cm-nom');
+    for (var j = 0; j < ns.length; j++) {
+      var n = ns[j], t = 52; n.style.fontSize = t + 'px';
+      while (n.scrollWidth > n.parentElement.clientWidth && t > 26) { t -= 2; n.style.fontSize = t + 'px'; }
+    }
+    var ws = document.querySelectorAll('.fiche-wrap');
+    for (var i = 0; i < ws.length; i++) {
+      var w = ws[i], f = w.firstElementChild;
+      var base = parseInt(w.getAttribute('data-w') || '700', 10);
+      var k = Math.min(1, w.clientWidth / base);
+      f.style.transform = 'scale(' + k + ')';
+      var hh = f.classList.contains('carte-membre') ? f.offsetHeight : Math.max(f.offsetHeight, f.scrollHeight);
+      w.style.height = Math.ceil(hh * k) + 'px';
+    }
   }
   window.addEventListener('resize', ajusterFiche);
-  window.addEventListener('beforeprint', function () { var w = $('.fiche-wrap'); if (w) { w.firstElementChild.style.transform = 'none'; } });
+  window.addEventListener('beforeprint', function () { var ws = document.querySelectorAll('.fiche-wrap'); for (var i = 0; i < ws.length; i++) ws[i].firstElementChild.style.transform = 'none'; });
   window.addEventListener('afterprint', ajusterFiche);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajusterFiche);
 })();
